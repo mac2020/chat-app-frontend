@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import App from './App.jsx'
+import App from "../App";
 const AppRoutes=()=>{
     return(
         <Routes>
@@ -9,3 +9,6 @@ const AppRoutes=()=>{
             </Routes>
     );
 };
+
+export default AppRoutes;
+
