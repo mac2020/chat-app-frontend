@@ -4,12 +4,15 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import AppRoutes from './config/Routes.jsx'
+import { Toaster } from 'react-hot-toast'
+import Joincreatechat from './component/joincreatechat.jsx'
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+    
 <AppRoutes />
 
 
