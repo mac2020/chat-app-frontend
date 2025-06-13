@@ -5,7 +5,9 @@ const AppRoutes=()=>{
     return(
         <Routes>
               <Route path='/chat' element={<h1>hello</h1>}/>
+                <Route path='/about' element={<h1>about</h1>}/>
               <Route path='/' element={<App />}/>
+              
             </Routes>
     );
 };
