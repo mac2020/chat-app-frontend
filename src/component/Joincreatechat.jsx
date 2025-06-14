@@ -1,9 +1,14 @@
 import React from 'react';
+import chatIcon from "../assets/speak.png"
 
 const joincreatechat = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-black">
     <div className="p-10 border border-orange-400 w-full flex flex-col gap-5 max-w-md rounded bg-gray-700">
+
+      <div>
+        <img src={chatIcon} className=" mx-auto w-16 "></img>
+      </div>
       <h1 className="text-2xl font-semibold text-center">Join Room</h1>
 
       {/*Your Name label with input field*/}
