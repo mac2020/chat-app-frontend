@@ -1,4 +1,5 @@
 import React from 'react'
+import { MdAttachFile, MdSend } from 'react-icons/md';
 
 const ChatPage = () => {
   return (
@@ -31,9 +32,17 @@ const ChatPage = () => {
 
 {/*input message container*/}
 
-<div className="border border-gray-800 shadow fixed bottom-0 w-2/3">
-    hi
-
+<div className=" border-gray-800 shadow fixed bottom-0 w-full h-16">
+  <div className="border rounded border-gray-700 bg-gray-600 w-2/3 mx-auto h-full flex justify-between items-center gap-3">
+  
+  <input type="text" placeholder="Type your message here..." className=" h-full w-full px-5 py-2 bg-gray-600 text-white"></input>
+  <button className="bg-green-500 hover:bg-green-700 px-2 py-2 rounded-full flex justify-center items-center h-10 w-10">
+    <MdSend size={20}/>
+  </button>
+  <button className="bg-purple-700 hover:bg-purple-800 px-2 py-2 rounded-full flex justify-center items-center h-10 w-10">
+    <MdAttachFile size={20}/>
+  </button>
+</div>
 </div>
 
     </div>
