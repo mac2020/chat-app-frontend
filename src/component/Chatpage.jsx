@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { MdAttachFile, MdSend } from 'react-icons/md';
 
+
+
+
 const ChatPage = () => {
+
+  // creating react state to store the messages
+const [message, setMessages]=useState([
+{content:"Hello ?",
+sender:"Durgesh",}
+]);
+
+// to take input creating one state
+const[input, setInput]=useState("");
+//creating input reference
+const inputRef=useRef(null);
+const chatBoxRef=useRef(null);
+const [stompClient, setStompClient]=useState(null);
+const[roomId, setroomId]=useState("");
+
   return (
-    <div>
+    <div >
 <header className="border bg-gray-600 py-3 shadow border-gray-900 w-full h-16 flex justify-around items-center">    
     {/*room id display*/}
     <div>
@@ -29,6 +47,19 @@ const ChatPage = () => {
 
     </div>
 </header>
+{/* message content section*/}
+
+<main className=" w-2/3 mx-auto h-screen overflow-auto bg-gray-300">
+{message.map((message, index) => (
+<div key={index}>
+<div className="border">
+  <p>{message.sender}</p>
+  <p>{message.content}</p>
+</div>
+</div>
+
+))}
+</main>
 
 {/*input message container*/}
 
