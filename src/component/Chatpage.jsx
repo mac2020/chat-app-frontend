@@ -8,8 +8,8 @@ const ChatPage = () => {
 
   // creating react state to store the messages
 const [message, setMessages]=useState([
-{content:"Hello ?",
-sender:"Durgesh",}
+{content:"Hello",
+sender:"mohit ",}
 ]);
 
 // to take input creating one state
@@ -49,13 +49,21 @@ const[roomId, setroomId]=useState("");
 </header>
 {/* message content section*/}
 
-<main className=" w-2/3 mx-auto h-screen overflow-auto bg-gray-300">
+<main className=" py-10 px-10 w-2/3 mx-auto h-screen overflow-auto bg-gray-300">
 {message.map((message, index) => (
-<div key={index}>
-<div className="border">
-  <p>{message.sender}</p>
+<div key={index} className="flex justify-end">
+<div  className="my-2  bg-blue-500 p-2 max-w-xs rounded ">
+  <div className="flex flex-row gap-2">
+    <img className="w-10 h-10"
+        src={"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Wayfarers&hairColor=Black&facialHairType=Blank&clotheType=CollarSweater&clotheColor=White&eyeType=WinkWacky&eyebrowType=UnibrowNatural&mouthType=Sad&skinColor=Light"} />
+
+<div className="flex flex-col gap-1">
+  <p className="text-sm font-bold">{message.sender}</p>
   <p>{message.content}</p>
 </div>
+</div>
+</div>
+
 </div>
 
 ))}
