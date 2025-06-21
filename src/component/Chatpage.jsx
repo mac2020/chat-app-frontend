@@ -22,9 +22,8 @@ sender:"kanika",},
 
 {content:"ok",
 sender:"mohit",},
-
-
-
+{content:"ok",
+sender:"mohit",},
 
 ]);
 
@@ -69,7 +68,7 @@ const[currentUser]=useState("mohit");
 <main className=" py-10 px-10 w-2/3 mx-auto h-screen overflow-auto bg-gray-300">
 {message.map((message, index) => (
 <div key={index} className={`flex ${message.sender===currentUser ? "justify-end": "justify-start"}`}>
-<div  className="my-2  bg-blue-500 p-2 max-w-xs rounded ">
+<div  className={`my-2 ${message.sender===currentUser ? 'bg-blue-500' : 'bg-green-400'} p-2 max-w-xs rounded`}>
   <div className="flex flex-row gap-2">
     <img className="w-10 h-10"
         src={"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Wayfarers&hairColor=Black&facialHairType=Blank&clotheType=CollarSweater&clotheColor=White&eyeType=WinkWacky&eyebrowType=UnibrowNatural&mouthType=Sad&skinColor=Light"} />
