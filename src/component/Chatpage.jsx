@@ -9,7 +9,23 @@ const ChatPage = () => {
   // creating react state to store the messages
 const [message, setMessages]=useState([
 {content:"Hello",
-sender:"mohit ",}
+sender:"mohit",},
+
+{content:"Hey",
+sender:"kanika",},
+
+{content:"How r u?",
+sender:"mohit",},
+
+{content:"fine.u?",
+sender:"kanika",},
+
+{content:"ok",
+sender:"mohit",},
+
+
+
+
 ]);
 
 // to take input creating one state
@@ -19,6 +35,7 @@ const inputRef=useRef(null);
 const chatBoxRef=useRef(null);
 const [stompClient, setStompClient]=useState(null);
 const[roomId, setroomId]=useState("");
+const[currentUser]=useState("mohit");
 
   return (
     <div >
@@ -51,7 +68,7 @@ const[roomId, setroomId]=useState("");
 
 <main className=" py-10 px-10 w-2/3 mx-auto h-screen overflow-auto bg-gray-300">
 {message.map((message, index) => (
-<div key={index} className="flex justify-end">
+<div key={index} className={`flex ${message.sender===currentUser ? "justify-end": "justify-start"}`}>
 <div  className="my-2  bg-blue-500 p-2 max-w-xs rounded ">
   <div className="flex flex-row gap-2">
     <img className="w-10 h-10"
