@@ -1,7 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import chatIcon from "../assets/speak.png"
 
 const joincreatechat = () => {
+  const [detail, SetDetail]=useState({
+
+    roomId:"12312",
+    userName:"mohit",
+
+  });
+
+  // this function will be called when user make change in any input feild & will bring value from frontend & change the object values
+
+  function handleFormInputChange(event){
+    SetDetail({
+
+      ...detail,
+      [event.target.name]: event.target.value,
+
+    });
+
+  }
+
+    // creating two more funtion based on a button which will be clicked 
+
+    function joinChat(){
+
+
+    }
+
+function creatRoom(){
+
+  const roomId= detail.roomId;
+
+}
+
+  
   return (
     <div className="min-h-screen flex items-center justify-center bg-black">
     <div className="p-10 border border-orange-400 w-full flex flex-col gap-5 max-w-md rounded bg-gray-700">
@@ -17,7 +50,11 @@ const joincreatechat = () => {
         Your Name
       </label>
       <input type="text" 
+      onChange={handleFormInputChange}
+      value={detail.userName}
       id="name"
+      name="userName"
+      placeholder="Enter the name"
       className="w-full bg-gray-400 px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-700">
       </input>
       </div>
@@ -29,16 +66,19 @@ const joincreatechat = () => {
       </label>
       <input type="text"
       id="id"
+      name="roomId"
+      onChange={handleFormInputChange}
+      value={detail.roomId}
       className="w-full bg-gray-400 px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500">
       </input>
       </div>
 
 {/*button*/}
 <div className="flex justify-center gap-3">
-  <button className="px-3 py-2 bg-blue-500 hover:bg-blue-900 rounded">
+  <button onClick={joinChat} className="px-3 py-2 bg-blue-500 hover:bg-blue-900 rounded">
     Join Room
   </button>
-  <button className="px-3 py-2 bg-green-500 hover:bg-green-900 rounded">
+  <button onClick={creatRoom} className="px-3 py-2 bg-green-500 hover:bg-green-900 rounded">
     Creat Room
   </button>
 
@@ -50,6 +90,7 @@ const joincreatechat = () => {
 
 
   );
-};
+}
+
 
 export default joincreatechat;
