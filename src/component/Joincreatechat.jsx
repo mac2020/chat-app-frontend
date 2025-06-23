@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import chatIcon from "../assets/speak.png"
 
+import { toast } from 'react-hot-toast';
+
+
+
 const joincreatechat = () => {
   const [detail, SetDetail]=useState({
 
@@ -20,17 +24,37 @@ const joincreatechat = () => {
     });
 
   }
+// funtion to validate input given on input form
+  function formValidate(){
+
+    if(detail.roomId==="" || detail.userName==="")
+
+      {
+            toast.error("invalid input");
+            return false;
+
+
+      }
+
+      return true;
+  }
 
     // creating two more funtion based on a button which will be clicked 
 
     function joinChat(){
 
 
+      if(formValidate())
+{}
+
+
     }
 
 function creatRoom(){
+   if(formValidate())
+       {console.log(detail);
 
-  const roomId= detail.roomId;
+       }
 
 }
 
